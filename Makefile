@@ -15,6 +15,7 @@ clean: down
 test:
 	@echo "Testeando servidores..."
 	@for ip in 101 102 103 104; do \
-		echo "Servidor 172.100.0.$$ip:"; \
+		echo "TEST Servidor 172.100.0.$$ip:"; \
 		curl -s http://172.100.0.$$ip; \
+		echo "\n"; \
 	done
