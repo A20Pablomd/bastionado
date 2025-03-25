@@ -9,7 +9,7 @@ RUN apk add --no-cache \
 
 # Copiar configuración personalizada (se montará en runtime)
 COPY ./archivos/httpd.conf /etc/apache2/httpd.conf
-COPY ./archivos/index.php /var/www/htdocs/index.php
+COPY ./archivos/index.php /var/www/localhost/htdocs/index.php
 
 # Puerto expuesto
 EXPOSE 80
