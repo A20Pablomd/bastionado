@@ -1,18 +1,21 @@
 FROM alpine:3.21.3
 
-# Instalar Apache, PHP y dependencias
+# Instalar Apache, PHP e dependencias
 RUN apk add --no-cache \
     apache2 \
     php \
     php-apache2 \
     && mkdir -p /run/apache2
 
-# Copiar configuración personalizada (se montará en runtime)
+# Copiar arquivos
 COPY ./archivos/httpd.conf /etc/apache2/httpd.conf
 COPY ./archivos/index.php /var/www/localhost/htdocs/index.php
 
-# Puerto expuesto
+# Porto exposto
 EXPOSE 80
 
-# Iniciar Apache en primer plano
+# Cambiar default rute
+CMD ["ip", "route", "del", "default"]
+CMD ["ip", "route", "add", "default", "via", "172.100.0.200"]
+# Iniciar Apache
 CMD ["httpd", "-D", "FOREGROUND"]
