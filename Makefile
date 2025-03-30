@@ -9,6 +9,10 @@ up:
 down:
 	docker compose down
 
+remove:
+	docker compose down
+	docker rmi 
+
 clean: down
 	docker system prune -af --volumes
 
