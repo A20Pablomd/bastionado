@@ -11,7 +11,8 @@ down:
 
 remove:
 	docker compose down
-	docker rmi 
+	docker rmi bastionado-haproxy
+	docker rmi alpine-cluster
 
 clean: down
 	docker system prune -af --volumes

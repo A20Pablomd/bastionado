@@ -2,15 +2,18 @@
 
 services:
   server1:
+    container_name: server1
     build:
-      context: Alpine/Cluster/.
+      context: alpine/cluster/.
     image: alpine-cluster
+    pull_policy: never
     networks:
       cluster:
         ipv4_address: 172.100.0.101
 #    command: sh -c "ip route del default && ip route add default via 172.100.0.200 && httpd -D FOREGROUND"
 
   server2:
+    container_name: server2
     image: alpine-cluster
     pull_policy: never
     networks:
@@ -19,6 +22,7 @@ services:
 #    command: sh -c "ip route del default && ip route add default via 172.100.0.200 && httpd -D FOREGROUND"
 
   server3:
+    container_name: server3
     image: alpine-cluster
     pull_policy: never
     networks:
@@ -27,6 +31,7 @@ services:
 #    command: sh -c "ip route del default && ip route add default via 172.100.0.200 && httpd -D FOREGROUND"
 
   server4:
+    container_name: server4
     image: alpine-cluster
     pull_policy: never
     networks:
@@ -35,7 +40,8 @@ services:
 #    command: sh -c "ip route del default && ip route add default via 172.100.0.200 && httpd -D FOREGROUND"
 
   haproxy:
-    build: Alpine/HAProxy/.
+    container_name: haproxy
+    build: alpine/haproxy/.
     networks:
       cluster:
         ipv4_address: 172.100.0.200
@@ -44,11 +50,13 @@ services:
 
 networks:
   cluster:
+#    network_name: cluster
     driver: bridge
     ipam:
       config:
         - subnet: 172.100.0.0/24
   monitor:
+#    network_name: monitor
     driver: bridge
     ipam:
        config:
