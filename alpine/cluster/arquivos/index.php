@@ -6,4 +6,5 @@ body>
 ------IP: ${_SERVER["SERVER_ADDR"]} ------
 </body>
 </html>";
+echo "\n"
 ?>
