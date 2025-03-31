@@ -24,7 +24,7 @@ if (( $test==1 ))
 then
 	docker stop server1 server2 server3
 	echo "Esperando..."
-	sleep 10
+	sleep 5
 	ping_haproxy
 
 elif (( $test==2 ))
