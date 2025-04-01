@@ -20,8 +20,8 @@ echo -ne "\n \
 3. Probar balanceado web2.example\n \
 4. Peticións ao balanceador \n"
 
-read -s -r -n 1 opcion
-#echo $test
+read opcion
+echo ""
 
 case $opcion in
 	1)
