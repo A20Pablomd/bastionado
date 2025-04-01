@@ -9,26 +9,44 @@ function ping_haproxy () {
 	done
 }
 
-
+counter=0
+input="a"
 #$i = 5
 
 echo -ne "\n \
 ----   Lista  ----\n \
 1. Probar backup \n \
-2. Probar balanceado \n "
+2. Probar balanceado \n \
+3. Peticións ao balanceador \n"
 
-read test
+read -s -r -n 1 opcion
 #echo $test
 
-if (( $test==1 ))
-then
-	docker stop server1 server2 server3
-	echo "Esperando..."
-	ping_haproxy
-
-elif (( $test==2 ))
-then
-	ping_haproxy
-else
-	echo "Erro"
-fi
+case $opcion in
+	1)
+		docker stop server1 server2 server3
+		echo "Esperando..."
+		ping_haproxy
+		;;
+	2)
+		ping_haproxy
+		;;
+	3)
+		echo "Solicitando as peticións ao balanceador..."
+		while :
+		do
+			read -s -r -t 0.1 -N 1 input
+			if [[ "$input"  == "q" ]]
+			then
+				echo "Numero de peticións: $counter"
+				exit
+			else
+				curl -s -S -o /dev/null 172.100.0.200
+				counter=$((counter+1))
+			fi
+        	done
+		;;
+	*)
+		echo "Erro: Opción non válida"
+		;;
+esac

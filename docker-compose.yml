@@ -48,6 +48,13 @@ services:
       monitor:
         ipv4_address: 172.200.0.200
 
+  prometheus:
+    container_name: prometheus
+    build: alpine/prometheus/.
+    networks:
+      monitor:
+        ipv4_address: 172.200.0.210
+
 networks:
   cluster:
 #    network_name: cluster

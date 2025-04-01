@@ -9,13 +9,13 @@ up:
 down:
 	docker compose down
 
-remove:
-	docker compose down
+remove:	down
 	docker rmi bastionado-haproxy
 	docker rmi alpine-cluster
+	docker rmi bastionado-prometheus
 
-clean: down
-	docker system prune -af --volumes
+clean:	remove
+	#docker rmi alpine:3.21.3
 
 test:
 	@echo "Testeando servidores..."
