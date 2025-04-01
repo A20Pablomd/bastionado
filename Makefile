@@ -14,9 +14,6 @@ remove:	down
 	docker rmi alpine-cluster
 	docker rmi bastionado-prometheus
 
-clean:	remove
-	#docker rmi alpine:3.21.3
-
 test:
 	@echo "Testeando servidores..."
 	@for ip in 101 102 103 104; do \
