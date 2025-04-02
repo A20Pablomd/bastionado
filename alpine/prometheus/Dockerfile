@@ -6,7 +6,7 @@ RUN apk update && \
 
 
 # Copiar arquivos
-COPY ./arquivos/prometheus.yml /etc/prometheus/prometheus.yml
+COPY ./prometheus.yml /etc/prometheus/prometheus.yml
 
 
 #Correr HAProxy

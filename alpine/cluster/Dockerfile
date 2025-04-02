@@ -8,8 +8,8 @@ RUN apk add --no-cache \
     && mkdir -p /run/apache2
 
 # Copiar arquivos
-COPY ./arquivos/httpd.conf /etc/apache2/httpd.conf
-COPY ./arquivos/index.php /var/www/localhost/htdocs/index.php
+COPY ./httpd.conf /etc/apache2/httpd.conf
+COPY ./index.php /var/www/localhost/htdocs/index.php
 
 # Porto exposto
 EXPOSE 80

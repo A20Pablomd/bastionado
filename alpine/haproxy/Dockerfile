@@ -6,7 +6,7 @@ RUN apk update && \
 
 
 # Copiar arquivos
-COPY ./arquivos/haproxy.cfg /etc/haproxy/haproxy.cfg
+COPY ./haproxy.cfg /etc/haproxy/haproxy.cfg
 
 
 # Porto exposto
