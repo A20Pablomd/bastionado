@@ -48,7 +48,7 @@ case $opcion in
 				echo "Numero de peticións: $counter"
 				exit
 			else
-				curl -s -S -o /dev/null -H "HOST: www.web1.example" 172.100.0.200
+				curl -H "HOST: www.web1.example" 172.100.0.200
 				counter=$((counter+1))
 			fi
         	done
