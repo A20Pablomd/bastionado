@@ -43,6 +43,14 @@ services:
       cluster:
         ipv4_address: 172.100.0.105
 
+  server6:
+    container_name: server6
+    image: alpine-cluster
+    pull_policy: never
+    networks:
+      cluster:
+        ipv4_address: 172.100.0.106
+
 #Creamos o haproxy
   haproxy:
     container_name: haproxy

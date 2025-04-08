@@ -1,13 +1,13 @@
 FROM alpine:3.21.3
 
-# Instalar Apache, PHP e dependencias
-RUN apk update && \
-	apk add haproxy
+# Instalar haproxy
+RUN apk add haproxy
 
 
 # Copiar arquivos
 COPY ./haproxy.cfg /etc/haproxy/haproxy.cfg
-
+RUN mkdir /etc/haproxy/certs
+COPY ./haproxy.pem /etc/haproxy/certs/haproxy.pem
 
 # Porto exposto
 EXPOSE 8000
