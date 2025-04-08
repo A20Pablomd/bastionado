@@ -10,6 +10,7 @@ RUN apk add --no-cache \
 # Copiar arquivos
 COPY ./httpd.conf /etc/apache2/httpd.conf
 COPY ./index.php /var/www/localhost/htdocs/index.php
+COPY ./health.html /var/www/localhost/htdocs/health.html
 
 # Porto exposto
 EXPOSE 80
