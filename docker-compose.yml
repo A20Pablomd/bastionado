@@ -4,7 +4,7 @@ services:
   server1:
     container_name: server1
     build:
-      context: alpine/cluster/.
+      context: cluster/.
     image: alpine-cluster
     pull_policy: never
     networks:
@@ -46,7 +46,7 @@ services:
 #Creamos o haproxy
   haproxy:
     container_name: haproxy
-    build: alpine/haproxy/.
+    build: haproxy/.
     networks:
       cluster:
         ipv4_address: 172.100.0.200
@@ -56,7 +56,7 @@ services:
 #Creamos o prometheus
   prometheus:
     container_name: prometheus
-    build: alpine/prometheus/.
+    build: prometheus/.
     networks:
       monitor:
         ipv4_address: 172.200.0.210

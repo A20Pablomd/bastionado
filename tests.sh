@@ -18,7 +18,8 @@ echo -ne "\n \
 1. Probar backup \n \
 2. Probar balanceado web1.example\n \
 3. Probar balanceado web2.example\n \
-4. Peticións ao balanceador \n"
+4. Peticións ao balanceador \n \
+5. Too many requests \n"
 
 read opcion
 echo ""
@@ -52,6 +53,13 @@ case $opcion in
 				counter=$((counter+1))
 			fi
         	done
+		;;
+	5)
+		for i in {1..12}; do
+			echo "Petición numero $i"
+			curl 172.100.0.200
+			echo ""
+		done
 		;;
 	*)
 		echo "Erro: Opción non válida"
