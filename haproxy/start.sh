@@ -1,6 +1,5 @@
 #!/bin/ash
 
 rsyslogd
-/var/run/fail2ban/fail2ban.sock
-fail2ban-server start
+fail2ban-server -xf start &
 haproxy -f /etc/haproxy/haproxy.cfg -db
