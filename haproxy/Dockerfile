@@ -13,13 +13,10 @@ COPY ./jail.conf /etc/fail2ban/jail.conf
 COPY ./haproxy-http-auth.conf /etc/fail2ban/filter.d/haproxy-http-auth.conf
 COPY ./supervisord.conf /etc/supervisord.conf
 RUN rm -rf /etc/fail2ban/jail.d/*
-#COPY ./start.sh /start.sh
 
-#RUN chmod +x /start.sh
 # Porto exposto
 EXPOSE 8000
 EXPOSE 80
-
+EXPOSE 9999
 # Correr HAProxy
-#CMD ["./start.sh"]
 CMD ["supervisord","-n","-c","/etc/supervisord.conf"]

@@ -55,9 +55,9 @@ services:
   haproxy:
     container_name: haproxy
     build: haproxy/.
-#    cap_add:
-#      - NET_ADMIN
-#      - NET_RAW
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     networks:
       cluster:
         ipv4_address: 172.100.0.200
