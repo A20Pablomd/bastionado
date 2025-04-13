@@ -3,7 +3,7 @@
 function ping_haproxy () {
 	for (( i=5;i>0; i-- ))
 	do
-		curl -H "HOST: www.web${num}.example" 172.100.0.200
+		curl -H "HOST: www.web${opcion}.example" 172.100.0.200
 		echo -ne "\n"
 		#i = $i -1
 	done
@@ -15,31 +15,34 @@ input="a"
 
 echo -ne "\n \
 ----   Lista  ----\n \
-1. Probar backup \n \
-2. Probar balanceado web1.example\n \
-3. Probar balanceado web2.example\n \
-4. Peticións ao balanceador \n \
-5. Too many requests \n"
-
+1. Probar balanceado web1.example\n \
+2. Probar balanceado web2.example\n \
+3. Probar backup \n \
+4. Probar https \n \
+5. Peticións ao balanceador \n \
+6. Too many requests \n"
+echo ""
 read opcion
 echo ""
 
 case $opcion in
+
 	1)
-		docker stop server1 server2 server3 server4
-		echo "Esperando..."
-		num=1
 		ping_haproxy
 		;;
 	2)
-		num=1
 		ping_haproxy
 		;;
+
 	3)
-		num=2
+		docker stop server1 server2 server3 server4
+		echo "Esperando..."
 		ping_haproxy
 		;;
 	4)
+		curl -k https://172.100.0.200
+		;;
+	5)
 		echo "Solicitando as peticións ao balanceador..."
 		while :
 		do
@@ -49,12 +52,12 @@ case $opcion in
 				echo "Numero de peticións: $counter"
 				exit
 			else
-				curl -H "HOST: www.web1.example" 172.100.0.200
+				curl -s -o /dev/null 172.100.0.200
 				counter=$((counter+1))
 			fi
         	done
 		;;
-	5)
+	6)
 		for i in {1..12}; do
 			echo "Petición numero $i"
 			curl 172.100.0.200
