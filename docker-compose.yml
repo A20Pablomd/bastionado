@@ -5,7 +5,7 @@ services:
     container_name: server1
     build:
       context: cluster/.
-    image: alpine-cluster
+    image: bastionado-cluster
     pull_policy: never
     networks:
       cluster:
@@ -13,7 +13,7 @@ services:
 
   server2:
     container_name: server2
-    image: alpine-cluster
+    image: bastionado-cluster
     pull_policy: never
     networks:
       cluster:
@@ -21,7 +21,7 @@ services:
 
   server3:
     container_name: server3
-    image: alpine-cluster
+    image: bastionado-cluster
     pull_policy: never
     networks:
       cluster:
@@ -29,7 +29,7 @@ services:
 
   server4:
     container_name: server4
-    image: alpine-cluster
+    image: bastionado-cluster
     pull_policy: never
     networks:
       cluster:
@@ -37,7 +37,7 @@ services:
 
   server5:
     container_name: server5
-    image: alpine-cluster
+    image: bastionado-cluster
     pull_policy: never
     networks:
       cluster:
@@ -45,7 +45,7 @@ services:
 
   server6:
     container_name: server6
-    image: alpine-cluster
+    image: bastionado-cluster
     pull_policy: never
     networks:
       cluster:
@@ -78,6 +78,13 @@ services:
     networks:
       monitor:
         ipv4_address: 172.200.0.215
+
+  grafana:
+    container_name: grafana
+    build: grafana/.
+    networks:
+      monitor:
+        ipv4_address: 172.200.0.220
 
 #Creamos as redes
 networks:
