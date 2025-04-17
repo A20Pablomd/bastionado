@@ -13,6 +13,7 @@ remove:	down
 	docker rmi bastionado-haproxy
 	docker rmi alpine-cluster
 	docker rmi bastionado-prometheus
+	docker rmi bastionado-alertmanager
 
 test:
 	@echo "Testeando servidores..."

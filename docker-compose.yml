@@ -72,6 +72,13 @@ services:
       monitor:
         ipv4_address: 172.200.0.210
 
+  alertmanager:
+    container_name: alertmanager
+    build: alertmanager/.
+    networks:
+      monitor:
+        ipv4_address: 172.200.0.215
+
 #Creamos as redes
 networks:
   cluster:

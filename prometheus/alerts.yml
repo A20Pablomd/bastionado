@@ -1,0 +1,20 @@
+groups:
+- name: haproxy.alerts
+  rules:
+  # High request rate alert (matches the 10 req/s limit in your config)
+  - alert: HAProxyHighRequestRate
+    expr: haproxy:http_requests:rate30s > 6
+    for: 30s
+    labels:
+      severity: warning
+    annotations:
+      description: "HAProxy está recivindo {{ $value }} peticións cada 30s"
+
+  # Backend server down alert
+  - alert: HAProxyBackendDown
+    expr:  haproxy_backend_active_servers{instance="172.200.0.200:9090", job="haproxy", proxy="sitio_web1"} == 0
+    for: 30s
+    labels:
+      severity: warning
+    annotations:
+      description: "Servidor backend 'server5' para web1 en uso"

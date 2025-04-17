@@ -1,0 +1,5 @@
+groups:
+- name: haproxy.rules
+  rules:
+  - record: haproxy:http_requests:rate30s
+    expr: rate(haproxy_frontend_http_requests_total[30s])
