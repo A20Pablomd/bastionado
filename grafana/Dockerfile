@@ -1,11 +1,14 @@
 FROM alpine:3.21.3
 
-# Instalar Apache, PHP e dependencias
-RUN apk add grafana
-
+# Instalar grafana
+RUN apk add --no-cache grafana
 
 # Copiar arquivos
 COPY ./prometheus.yaml /usr/share/grafana/conf/provisioning/datasources
 
-#Correr HAProxy
+# Portos
+##Dashboard grafana
+EXPOSE 3000
+
+# Correr grafana
 CMD ["grafana-server", "-homepath=/usr/share/grafana"]
