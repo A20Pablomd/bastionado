@@ -9,12 +9,12 @@ O Grafana e o alertmanager non os vamos a ver moito en profundidae, simplemente 
 O proxecto ten un arquivo pdf de documentación que explica mais a fondo todo isto.
 
 ## COMO LEVANTAR O ESCENARIO
-Este escenario usa docker-compose e Dockerfiles manexados por un Makefile. Os comandos son os seguintes:
+Este escenario usa docker-compose e Dockerfiles manexados por un Makefile. Os comandos son os seguintes:  
 
-Make buil -> Crea os contedores.
-Make up -> levanta os contedores.
-Make down -> baixa e borra os contedores e networks.
-Make remove -> fai un Make down e tamén borra as imaxes creadas.
+Make buil -> Crea os contedores.  
+Make up -> levanta os contedores.  
+Make down -> baixa e borra os contedores e networks.  
+Make remove -> fai un Make down e tamén borra as imaxes creadas.  
 
 ## ESTRUCTURA DOS FICHEIROS
 
