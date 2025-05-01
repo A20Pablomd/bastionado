@@ -15,9 +15,5 @@ COPY ./health.html /var/www/localhost/htdocs/health.html
 # Porto exposto
 EXPOSE 80
 
-# Cambiar default route ao haproxy (pode dar algún erro sen isto)
-CMD ["ip", "route", "del", "default"]
-CMD ["ip", "route", "add", "default", "via", "172.100.0.200"]
-
 # Iniciar Apache
 CMD ["httpd", "-D", "FOREGROUND"]
