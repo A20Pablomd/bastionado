@@ -1,4 +1,4 @@
-.PHONY: build up down clean
+.PHONY: build up down remove
 
 build:
 	docker compose build
