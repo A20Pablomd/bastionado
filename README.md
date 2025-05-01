@@ -11,7 +11,7 @@ O proxecto ten un arquivo pdf de documentación que explica mais a fondo todo is
 ## COMO LEVANTAR O ESCENARIO
 Este escenario usa docker-compose e Dockerfiles manexados por un Makefile. Os comandos son os seguintes:  
 
-Make buil -> Crea os contedores.  
+Make build -> Crea os contedores.  
 Make up -> levanta os contedores.  
 Make down -> baixa e borra os contedores e networks.  
 Make remove -> fai un Make down e tamén borra as imaxes creadas.  
