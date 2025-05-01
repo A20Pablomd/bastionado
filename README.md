@@ -48,7 +48,7 @@ bastionado/
 │       ├── private.key
 │       └── request.csr
 └── prometheus
-    ├── Dockerfile
-    ├── alerts.yml
-    ├── prometheus.yml
-    └── rules.yml
+├── Dockerfile
+├── alerts.yml
+├── prometheus.yml
+└── rules.yml
