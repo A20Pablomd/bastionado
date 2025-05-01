@@ -18,37 +18,38 @@ Make remove -> fai un Make down e tamén borra as imaxes creadas.
 
 ## ESTRUCTURA DOS FICHEIROS
 
-bastionado/
+bastionado/  
 ├── Documentacion.pdf  
 ├── Makefile  
+├── README.md  
 ├── docker-compose.yml  
-├── tests.sh
-├── alertmanager
-│   ├── Dockerfile
-│   └── alertmanager.yml
-├── cluster
-│   ├── Dockerfile
-│   ├── health.html
-│   ├── httpd.conf
-│   └── index.php
-├── grafana
-│   ├── Dockerfile
-│   └── prometheus.yaml
-├── haproxy
-│   ├── Dockerfile
-│   ├── haproxy-http-auth.conf
-│   ├── haproxy.cfg
-│   ├── haproxy.log
-│   ├── haproxy.pem
-│   ├── jail.conf
-│   ├── rsyslog.conf
-│   ├── supervisord.conf
-│   └── keys
-│       ├── certificate.crt
-│       ├── private.key
-│       └── request.csr
-└── prometheus
-├── Dockerfile
-├── alerts.yml
-├── prometheus.yml
-└── rules.yml
+├── tests.sh  
+├── alertmanager  
+│   ├── Dockerfile  
+│   └── alertmanager.yml  
+├── cluster  
+│   ├── Dockerfile  
+│   ├── health.html  
+│   ├── httpd.conf  
+│   └── index.php  
+├── grafana  
+│   ├── Dockerfile  
+│   └── prometheus.yaml  
+├── haproxy  
+│   ├── Dockerfile  
+│   ├── haproxy-http-auth.conf  
+│   ├── haproxy.cfg  
+│   ├── haproxy.log  
+│   ├── haproxy.pem  
+│   ├── jail.conf  
+│   ├── rsyslog.conf  
+│   ├── supervisord.conf  
+│   └── keys  
+│       ├── certificate.crt  
+│       ├── private.key  
+│       └── request.csr  
+└── prometheus  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Dockerfile  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── alerts.yml  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── prometheus.yml  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── rules.yml
