@@ -24,18 +24,18 @@ bastionado/
 ├── README.md  
 ├── docker-compose.yml  
 ├── tests.sh  
-├── alertmanager  
+├── alertmanager/  
 │   ├── Dockerfile  
 │   └── alertmanager.yml  
-├── cluster  
+├── cluster/  
 │   ├── Dockerfile  
 │   ├── health.html  
 │   ├── httpd.conf  
 │   └── index.php  
-├── grafana  
+├── grafana/  
 │   ├── Dockerfile  
 │   └── prometheus.yaml  
-├── haproxy  
+├── haproxy/  
 │   ├── Dockerfile  
 │   ├── haproxy-http-auth.conf  
 │   ├── haproxy.cfg  
@@ -44,11 +44,11 @@ bastionado/
 │   ├── jail.conf  
 │   ├── rsyslog.conf  
 │   ├── supervisord.conf  
-│   └── keys  
-│       ├── certificate.crt  
-│       ├── private.key  
-│       └── request.csr  
-└── prometheus  
+│   └── keys/  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       ├── certificate.crt  
+│ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      ├── private.key  
+│  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     └── request.csr  
+└── prometheus/  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Dockerfile  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── alerts.yml  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── prometheus.yml  
