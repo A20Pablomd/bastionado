@@ -19,9 +19,9 @@ Make remove -> fai un Make down e tamén borra as imaxes creadas.
 ## ESTRUCTURA DOS FICHEIROS
 
 bastionado/
-├── Documentacion.pdf
-├── Makefile
-├── docker-compose.yml
+├── Documentacion.pdf  
+├── Makefile  
+├── docker-compose.yml  
 ├── tests.sh
 ├── alertmanager
 │   ├── Dockerfile
